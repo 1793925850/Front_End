@@ -69,3 +69,25 @@ export default {
 </template>
 ```
 
+## 2. 组合式 API
+
+通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+const count = ref(0)
+function increment(){
+    count.value++
+}
+onMounted(() => {
+    console.log(`The initial count is ${count.value}.`)
+})
+</script>
+<template>
+	<button @click="increment">
+        Count is: {{ count }}
+    </button>
+</template>
+```
+
