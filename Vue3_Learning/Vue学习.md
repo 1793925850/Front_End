@@ -31,5 +31,41 @@ Vue 的设计注重灵活性，和“可以被逐步集成”这个特点。
 
 ## 2. Vue 官方文档
 
->https://cn.vuejs.org/
+>中文文档：https://cn.vuejs.org/
+>
+>英文文档：https://vuejs.org/
+
+# 03_Vue API 风格
+
+Vue 的组件可以按两种不同的风格书写：**选项式 API** 和**组合式 API**。
+
+## 1. 选项式 API
+
+使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如 data、methods 和 mounted。选项所定义的属性都会暴露在函数内部的 this 上，它会指向当前的组件实例。如下所示：
+
+```vue
+<script>
+export default {
+    data(){
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        increment(){
+            this.count++
+        }
+    },
+    mounted(){
+        console.log(`The initial count is ${this.count}.`)
+    }
+}
+</script>
+
+<template>
+	<button @click="increment">
+        Count is: {{ count }}
+    </button>
+</template>
+```
 
