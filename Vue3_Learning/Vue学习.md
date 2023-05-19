@@ -109,3 +109,25 @@ npm init vue@latest
 
 也可以使用 pnpm，以及使用 vite 来初始化 Vue 文件
 
+接下来会有些选项，看情况选择。
+
+## 1. 开发环境
+
+推荐的 IDE 配置是 **vscode + Volar** 扩展
+
+# 05_Vue 项目目录结构
+
+```go
+.vscode			--- vscode工具的配置文件夹
+node_modules	--- Vue项目的运行依赖文件夹
+public			--- 资源文件夹（浏览器图标）
+src				--- 源码文件夹
+.gitignore		--- git忽略文件
+index.html		--- HTML入口文件
+package.json	--- 信息描述文件
+README.md		--- 注释文件
+vite.config.js	--- Vue配置文件
+```
+
+# 06_模板语法
+
