@@ -91,3 +91,21 @@ onMounted(() => {
 </template>
 ```
 
+推荐采用`组合式 API + 单文件组件`。
+
+# 04_Vue开发前的准备
+
+查看node版本：
+
+```powershell
+node -v
+```
+
+创建 Vue 项目：
+
+```powershell
+npm init vue@latest
+```
+
+也可以使用 pnpm，以及使用 vite 来初始化 Vue 文件
+
