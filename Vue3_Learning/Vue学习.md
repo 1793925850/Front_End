@@ -245,3 +245,11 @@ export default {
 <div :id="dynamicId" :class="dynamicClass"></div>
 ```
 
+## 2. 布尔型 Attribute
+
+![1684594749971](D:\Typora\user-image\1684594749971.png)
+
+## 3. 动态绑定多个值
+
+![1684594916372](D:\Typora\user-image\1684594916372.png)
+
