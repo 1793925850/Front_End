@@ -212,3 +212,36 @@ export default {
 </script>
 ```
 
+# 07_属性绑定
+
+双大括号不能再 HTML attributes 中使用。想要响应式地绑定一个 attribute，应该使用 v-bind 指令。
+
+```vue
+<template>
+	<div v-bind:id="dynamicId" v-bind:class="dynamicClass">AppID</div>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            dynamicId:"appid",
+            dynamicClass:"appclass"
+        }
+    }
+}
+</script>
+```
+
+`v-bind` 指令指示 Vue 将元素的 `id` attribute 与组件的 `dynamicId` 属性保持一致。
+
+如果绑定的值是 `null` 或者`undefined`，那么该 attribute 将会从渲染的元素上移除。
+
+## 1. 简写
+
+因为 v-bind 非常常用我们提供了特定的简写语法
+
+```vue
+<div :id="dynamicId" :class="dynamicClass"></div>
+```
+
