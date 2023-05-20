@@ -131,3 +131,84 @@ vite.config.js	--- Vue配置文件
 
 # 06_模板语法
 
+Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其组件实例的数据绑定到呈现的 DOM 上。所有的 Vue 模板都是语法层面合法的 HTML，可以被符合规范的浏览器和 HTML 解析器解析。
+
+## 1. 文本插值
+
+最基本的数据绑定形式是**文本插值**，使用的是“Mustache”语法（双大括号）。
+
+```vue
+<template>
+	<p>
+        {{ msg }}
+    </p>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            msg:"神奇的魔法"
+        }
+    }
+}
+</script>
+```
+
+## 2. 使用 JS 表达式
+
+每个绑定仅支持**单一表达式**，也就是一段能够被求值的 JavaScript 代码。一个简单的判断方法是：是否可以合法地写在 **return** 后面。
+
+```vue
+<template>
+	<p>
+        {{ number + 1 }}
+    </p>
+	<p>
+        {{ ok ? 'YES' : 'NO' }}
+    </p>
+	<p>
+        {{ message.spilt('').reverse().join('') }}
+    </p>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            number:10,
+            ok:true,
+            message:"大家好"
+        }
+    }
+}
+</script>
+```
+
+也不支持**条件控制**。
+
+## 3. 原始 HTML
+
+双大括号会将数据插值为纯文本，而不是 HTML。若想插入 HTML，需要使用`v-html`指令。
+
+```vue
+<template>
+	<p>
+        纯文本: {{ rawHtml }}
+    </p>
+	<p>
+        属性: <span v-html="rawHtml"></span>
+    </p>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            rawHtml:"<a href='https://itbaizhan.com'>百战程序员</a>"
+        }
+    }
+}
+</script>
+```
+
