@@ -376,9 +376,67 @@ v-for 也支持使用可选的第二个参数表示当前项的**位置索引**�
 - **内联事件处理器：**事件被触发时执行的内联 JavaScript 语句（与 onclick 类似）
 - **方法事件处理器：**一个指向组件上定义的方法的属性名或是路径
 
-# 1. 内联事件处理器
+## 1. 内联事件处理器
 
 内联事件处理器通常用于`简单场景`。
+
+```vue
+<template>
+	<button @click="count++">
+        Add 1
+    </button>
+	<p>
+        Count is: {{ count }}
+    </p>
+</template>
+
+<script>
+export default {
+	data(){
+		return {
+            count:0
+        }
+	}
+}
+</script>
+```
+
+## 2. 方法事件处理器
+
+工作中主要用到的。
+
+```vue
+<template>
+	<button @click="addCount">
+        Add
+    </button>
+	<p>
+        Count is: {{ count }}
+    </p>
+</template>
+
+<script>
+export default {
+	data(){
+		return {
+            count:0
+        }
+	},
+    
+    // methods 所有的方法或函数都放在这里
+    methods:{
+        addCount(){
+            // 读取到 data 里面的数据的方案：this.count
+            this.count++
+        }
+    }
+}
+</script>
+```
+
+# 12_事件传参
+
+事件参数可以获取 event 对象和通过事件传递数据。
 
 
 
