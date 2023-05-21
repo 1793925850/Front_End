@@ -253,3 +253,132 @@ export default {
 
 ![1684594916372](D:\Typora\user-image\1684594916372.png)
 
+# 08_条件渲染
+
+在 Vue 中，提供了条件渲染，这类似于 JavaScript 中的条件语句：
+
+- v-if
+- v-else
+- v-else-if
+- v-show
+
+## 1. v-if
+
+v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回**真值**时才被渲染。
+
+![1684663387313](D:\Typora\user-image\1684663387313.png)
+
+## 2. v-else
+
+也可以使用 v-else 为 v-if 添加一个“else 区块”
+
+![1684663599657](D:\Typora\user-image\1684663599657.png)
+
+## 3. v-else-if
+
+v-else-if 提供的是相应于 v-if 的“else if 区块”。它可以连续多次重复使用。
+
+```vue
+<template>
+	<div v-if="type === 'A'">
+        A
+    </div>
+	<div v-else-if="type === 'B'">
+        B
+    </div>
+	<div v-else-if="type === 'C'">
+        C
+    </div>
+	<div v-else>
+        Not A/B/C
+    </div>
+</template>
+
+<script>
+export default {
+	data(){
+		return {
+            type:"D"
+        }
+	}
+}
+</script>
+```
+
+## 4. v-show
+
+另一个可以用来按条件显示一个元素的指令是 v-show（相当于没有 v-else 的 v-if ）。其用法基本一样：
+
+![1684663995261](D:\Typora\user-image\1684663995261.png)
+
+## 5. v-if 和 v-show 的区别
+
+![1684664105471](D:\Typora\user-image\1684664105471.png)
+
+# 09_列表渲染
+
+![1684664324381](D:\Typora\user-image\1684664324381.png)
+
+## 1. 复杂数据
+
+大多数情况下，渲染的数据源来源于网络请求，也就是 JSON 格式。
+
+![1684664531166](D:\Typora\user-image\1684664531166.png)
+
+v-for 也支持使用可选的第二个参数表示当前项的**位置索引**。
+
+![1684664838558](D:\Typora\user-image\1684664838558.png)
+
+也可以使用 of 作为分隔符来替代 in，这更接近 JavaScript 的迭代器语法。
+
+```vue
+<div v-for="item of items">
+    
+</div>
+```
+
+## 2. v-for 与对象
+
+可以使用 v-for 来遍历一个对象的所有属性
+
+![1684665000446](D:\Typora\user-image\1684665000446.png)
+
+# 10_通过 key 管理状态
+
+![1684665249227](D:\Typora\user-image\1684665249227.png)
+
+![1684665515440](D:\Typora\user-image\1684665515440.png)
+
+
+
+>**PS：**
+>
+>key 在这里是一个通过 v-bind 绑定的特殊 attribute
+>
+>推荐在任何可行的时候为 v-for 提供一个 key attribute
+>
+>key 绑定的值期望是一个基础类型的值，例如 string 或 number 类型
+
+## 1. key 的来源
+
+不建议使用 index 作为 key 的值，因为我们要确保每一条数据的唯一索引不会发生变化。
+
+![1684665750164](D:\Typora\user-image\1684665750164.png)
+
+可以使用对象里面的 id 属性作为 key 的值
+
+# 11_事件处理
+
+我们可以使用 v-on 指令（简写为 @ ）来监听 DOM 事件，并在事件触发时执行对应的 JavaScript。用法：v-on:click=“methodName”或@click=“handler”。
+
+事件处理器的值可以是：
+
+- **内联事件处理器：**事件被触发时执行的内联 JavaScript 语句（与 onclick 类似）
+- **方法事件处理器：**一个指向组件上定义的方法的属性名或是路径
+
+# 1. 内联事件处理器
+
+内联事件处理器通常用于`简单场景`。
+
+
+
