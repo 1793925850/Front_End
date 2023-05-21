@@ -438,5 +438,45 @@ export default {
 
 事件参数可以获取 event 对象和通过事件传递数据。
 
+## 1. 获取 event 对象
+
+![1684667336967](D:\Typora\user-image\1684667336967.png)
+
+Vue 中的 event 对象，就是原生 JS 的Event 对象。
+
+## 2. 传递参数
+
+![1684667569056](D:\Typora\user-image\1684667569056.png)
+
+## 3. 传递参数过程中获取 event 对象
+
+![1684667610545](D:\Typora\user-image\1684667610545.png)
+
+# 13_事件修饰符
+
+![1684667718869](D:\Typora\user-image\1684667718869.png)
+
+为了解决这一问题，Vue 为 v-on(@) 提供了**事件修饰符**，常用有以下几个：
+
+- .stop
+- .prevent
+- .once
+- .enter
+- 等等
+
+> **具体参考**
+>
+> 地址：https://cn.vuejs.org/guide/essentials/event-handing.html#event-modifiers
+
+## 1. 阻止默认事件
+
+![1684667973066](D:\Typora\user-image\1684667973066.png)
+
+## 2. 阻止事件冒泡
+
+![1684668380314](D:\Typora\user-image\1684668380314.png)
+
+触发子组件的同时，也触发了父组件，这种事件就叫作“**事件冒泡**”。
+
 
 
