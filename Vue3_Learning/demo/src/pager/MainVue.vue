@@ -1,12 +1,17 @@
 <template>
   <div class="main">
       <h3>MainVue</h3>
+      <ArticleVue/>
+      <ArticleVue/>
   </div>
 </template>
 
 <script>
+import ArticleVue from "@/pager/ArticleVue.vue";
 export default {
-
+  components:{
+      ArticleVue,
+  }
 }
 </script>
 
