@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
-      <h3>MainVue</h3>
-  </div>
+    <div class="aside">
+        <h3>AsideVue</h3>
+    </div>
 </template>
 
 <script>
@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style scoped>
-.main{
-    float: left;
-    width: 70%;
+.aside{
+    float: right;
+    width: 29%;
     height: 600px;
     border: 5px solid #999;
     box-sizing: border-box;
