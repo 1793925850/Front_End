@@ -22,9 +22,9 @@
 
     <script>
         function display(){
-            var temp = document.getElementsByTagName("template")[0];
+            let temp = document.getElementsByTagName("template")[0];
             //通过cloneNode方法把获取到的节点再复制一份
-            var clo = temp.content.cloneNode(true);
+            let clo = temp.content.cloneNode(true);
             document.body.appendChild(clo);
         }
     </script>
