@@ -478,5 +478,53 @@ Vue 中的 event 对象，就是原生 JS 的Event 对象。
 
 触发子组件的同时，也触发了父组件，这种事件就叫作“**事件冒泡**”。
 
+# 14_数组变化侦测
+
+## 1. 变更方法
+
+Vue 能够侦听响应式数组的变更方法，并在它们被调用时触发相关的更新。这些变更方法包括：
+
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+
+```vue
+<template>
+	<div>
+        <p v-for="(item, index) in names" :key="index">
+            {{ item }}
+    	</p>
+        <button @click="clickAddNamesHandle">
+            增加数据
+    	</button>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            names:["iaiai", "dosds", "dsdsds"]
+        }
+    },
+    methods:{
+        clickAddNamesHandle(){
+            this.names.push("sakura")
+        }
+    }
+}
+</script>
+```
+
+## 2. 替换一个数组
+
+![1684806845541](D:\Typora\user-image\1684806845541.png)
+
+![1684806991765](D:\Typora\user-image\1684806991765.png)
+
 
 
