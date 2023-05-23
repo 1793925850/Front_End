@@ -603,3 +603,85 @@ export default {
 但，在处理比较复杂的绑定时，通过拼接生成字符串是麻烦且易出错的。
 
 因此，Vue 专门为 style 的 v-bind 用法提供了特殊的功能增强。除了字符串外，表达式的值也可以是`对象`或`数组`。
+
+## 1. 绑定对象
+
+```vue
+<template>
+	<div :style="{ color: activeColor, fontSize: fontSize + 'px' }">
+        Style绑定
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            activeColor:'red'
+            fontSize: 30
+        }
+    }
+}
+</script>
+```
+
+![1684809539265](D:\Typora\user-image\1684809539265.png)
+
+## 2. 绑定数组
+
+![1684809584714](D:\Typora\user-image\1684809584714.png)
+
+了解就行，一般没啥意义
+
+# 18_侦听器
+
+**作用：**侦听页面数据的变化。
+
+可以使用 watch 选项在每次响应式属性(也就是双花括号{{}}里的数据)发生变化时触发一个函数。
+
+![1684809833774](D:\Typora\user-image\1684809833774.png)
+
+> 方法名必须与侦听的变量名一致
+
+# 19_表单输入绑定
+
+![1684809964718](D:\Typora\user-image\1684809964718.png)
+
+![1684809987321](D:\Typora\user-image\1684809987321.png)
+
+效果：
+
+![1684810115204](D:\Typora\user-image\1684810115204.png)
+
+## 1. 复选框
+
+![1684810221137](D:\Typora\user-image\1684810221137.png)
+
+## 2. 修饰符
+
+v-model 也提供了修饰符：.lazy、.number、.trim
+
+默认情况下，v-model 会在每次 input 事件后更新数据。
+
+### 2.1. .lazy
+
+可以添加 lazy 修饰符来改为在每次 change 事件后(比如，失去焦点、回车等操作)更新数据。
+
+![1684810545483](D:\Typora\user-image\1684810545483.png)
+
+
+
+# 20_模板引用
+
+虽然 Vue 的声明性渲染模型为你抽象了大部分对 DOM 的直接操作，但在某些情况下，我们仍然需要直接访问底层 DOM 元素。要实现这一点，可以使用特殊的 ref attribute。
+
+挂载结束后引用都会被暴露在 this.$refs 之上。
+
+![1684811103380](D:\Typora\user-image\1684811103380.png)
+
+
+
+> 如果没有特别的需求，不要操作 DOM
+
+# 21_组件组成
+
