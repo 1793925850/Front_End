@@ -1,12 +1,18 @@
 <template>
     <div class="aside">
         <h3>AsideVue</h3>
+        <ItemVue/>
+        <ItemVue/>
+        <ItemVue/>
     </div>
 </template>
 
 <script>
+import ItemVue from "@/pager/ItemVue.vue";
 export default {
-
+    components:{
+        ItemVue,
+    }
 }
 </script>
 
