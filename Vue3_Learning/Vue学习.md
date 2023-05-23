@@ -685,3 +685,48 @@ v-model 也提供了修饰符：.lazy、.number、.trim
 
 # 21_组件组成
 
+组件最大的优势就是**可复用性**。
+
+当使用构建步骤时，我们一般会将 Vue 组件定义在一个单独的 **.vue** 文件中，这被叫做**单文件组件**(简称 **SFC**)。
+
+## 1. 组件组成结构
+
+```vue
+<!--template 承载所有的 html 标签-->
+<template>
+	<div>
+        承载标签
+    </div>
+</template>
+
+<!--script 承载所有的业务逻辑-->
+<script>
+export default{}
+</script>
+
+<!--style 承载所有的样式-->
+<!--scoped 让当前样式只在当前组件中生效-->
+<style scoped>
+</style>
+```
+
+## 2. 组件引用
+
+![1684828578814](D:\Typora\user-image\1684828578814.png)
+
+必须存在 template 标签
+
+
+
+# 22_组件嵌套关系
+
+![1684828840267](D:\Typora\user-image\1684828840267.png)
+
+![1684828894935](D:\Typora\user-image\1684828894935.png)
+
+
+
+## 1. 创建组件及引用关系
+
+![1684828979248](D:\Typora\user-image\1684828979248.png)
+
