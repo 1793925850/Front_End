@@ -1123,3 +1123,55 @@ export default {
 
 ![1684915484534](D:\Typora\user-image\1684915484534.png)
 
+
+
+> **注意**
+>
+> provide 和 inject 只能由上到下的传递
+
+# 38_Vue应用
+
+## 1. 应用实例
+
+每个 Vue 应用都是通过 createApp 函数创建一个新的**应用实例**。
+
+```vue
+import { createApp } from 'vue'
+
+const app = createApp({
+	/* 根组件选项 */
+})
+```
+
+在一个 Vue 项目中，有且只有一个 Vue 的实例对象
+
+app：Vue 的实例对象
+
+
+
+## 2. 根组件
+
+传入 createApp 的对象实际上是一个组件，每个应用都需要一个“根组件”，其他组件将作为其子组件。
+
+![1684916000138](D:\Typora\user-image\1684916000138.png)
+
+## 3. 挂载应用
+
+应用实例必须在调用了 .mount() 方法后才能渲染出来。
+
+该方法接收一个“容器”参数，可以是一个实际的 DOM 元素或是一个 CSS 选择器字符串。
+
+![1684916159800](D:\Typora\user-image\1684916159800.png)
+
+其实真正的运行入口是 index.html 文件。
+
+## 4. 公共资源
+
+在 src 目录下的 assets 文件夹的作用就是存放公共资源，例如：图片、公共CSS或者字体图标等。
+
+![1684916380370](D:\Typora\user-image\1684916380370.png)
+
+
+
+vite 就类似于 webpack
+
